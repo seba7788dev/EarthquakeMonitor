@@ -24,10 +24,12 @@ class MainActivity : AppCompatActivity() {
             Earthquake("3","Ciudad de Mexico",5.5,276653245L,-108.5528,28.64685),
             Earthquake("4","Bogota",4.9,264893245L,-100.9528,26.55785),
             Earthquake("5","Caracas",5.1,274458945L,-98.8528,28.59985),
-            Earthquake("6","Brasilis",2.5,279963245L,-105.8528,28.99685),
+            Earthquake("6","Brasilia",2.5,279963245L,-105.8528,28.99685),
             Earthquake("7","Santiago de Chile",6.5,284453245L,-103.2528,28.57685)
         )
 
+        val adapter= EqAdapter(eqList)
+        binding.eqRecycler.adapter=adapter
         
 
 
