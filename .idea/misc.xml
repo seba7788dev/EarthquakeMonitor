@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Sebastian/Desktop/Documentos Varios/Android Studio/Udemy - meli/HackAprende/EarthquakeMonitor/app/src/main/res/drawable/ic_chevron_right_black_24dp.xml" value="0.285" />
         <entry key="..\:/Users/Sebastian/Desktop/Documentos Varios/Android Studio/Udemy - meli/HackAprende/EarthquakeMonitor/app/src/main/res/layout/activity_main.xml" value="0.18" />
+        <entry key="..\:/Users/Sebastian/Desktop/Documentos Varios/Android Studio/Udemy - meli/HackAprende/EarthquakeMonitor/app/src/main/res/layout/eq_list_item.xml" value="0.25" />
       </map>
     </option>
   </component>

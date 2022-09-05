@@ -1,4 +1,4 @@
-package com.example.EarthquakeMonitor
+package com.example.earthquakeMonitor
 
 import org.junit.Test
 
