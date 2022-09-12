@@ -1,28 +1,48 @@
 package com.example.earthquakeMonitor
 
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.earthquakeMonitor.databinding.EqListItemBinding
 
+private val TAG = EqAdapter::class.java.simpleName
 class EqAdapter(val earthquakes: MutableList<Earthquake>):RecyclerView.Adapter<EqAdapter.EqViewHolder>() {
 
+
+
+    lateinit var onItemClickListener: (Earthquake) -> Unit
     //el parametro, es el layout del item
-    class EqViewHolder(private var binding: EqListItemBinding):RecyclerView.ViewHolder(binding.root){
+   inner class EqViewHolder(private var binding: EqListItemBinding):RecyclerView.ViewHolder(binding.root){
         //val magnitudeText=view.findViewById<TextView>(R.id.eq_magnitude_text)
+
         val magnitudeText=binding.eqMagnitudeText
         val placeText=binding.eqPlaceText
 
         fun bind(earthquake: Earthquake){
+
+
             magnitudeText.text=earthquake.magnitude.toString()
             placeText.text=earthquake.place
+            binding.root.setOnClickListener {
+                if (::onItemClickListener.isInitialized){
+                onItemClickListener(earthquake)
+                }else{
+                        Log.e(TAG,"variable sin inicializar!!")
+                }
+            }
 
+            binding.executePendingBindings()
 
         }
 
+
     }
+
+
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EqViewHolder {
         //agrego dataBinding y saco el findViewById
